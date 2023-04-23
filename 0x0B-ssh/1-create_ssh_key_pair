@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # Creates RSA key pair
 
-read -s -p "Enter passphrase for private key: " passphrase
-ssh-keygen -b 4096 -f school -t rsa -N "$passphrase"
+ssh-keygen -b 4096 -f school -t rsa -N betty
