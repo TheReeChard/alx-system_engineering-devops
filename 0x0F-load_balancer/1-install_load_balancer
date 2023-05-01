@@ -13,6 +13,11 @@ echo "
     		bind *:80
     		mode http
     		default_backend servers
+		listen load_balancer
+		bind *:80
+		mode http
+		option httpclose
+		option forwardfor
 
 	backend servers
     		mode http
