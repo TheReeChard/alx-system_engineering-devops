@@ -1,19 +1,7 @@
 #!/usr/bin/env bash
-# Install Nginx if it's not already installed
-if ! command -v nginx &> /dev/null
-then
-    sudo apt-get update
-    sudo apt-get install nginx -y
-fi
+# Configures an Nginx server to listen on port 80.
 
-# Create a new server block in the Nginx configuration file
-cat <<EOF | sudo tee /etc/nginx/sites-available/default > /dev/null
-server {
-    listen 80;
-    server_name your_domain.com;
-    root /var/www/html;
-    index index.html;
-}
-EOF
-
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
+
