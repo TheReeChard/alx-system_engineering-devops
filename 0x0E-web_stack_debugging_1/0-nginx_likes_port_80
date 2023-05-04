@@ -15,3 +15,5 @@ server {
     index index.html;
 }
 EOF
+
+service nginx restart
